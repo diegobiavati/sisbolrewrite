@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'boletim',
+    'materia',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
