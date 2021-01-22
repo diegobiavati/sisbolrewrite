@@ -24,6 +24,5 @@ class Boletim(models.Model):
     assinaConfereBI = models.BooleanField(default=False)
     dataPublicacao = models.DateField()
     slug = models.SlugField()
-    tipoPub = models.ForeignKey(TipoBI, on_delete=models.CASCADE)
-    #biRef = models.
-    #colMateriaBI = models.
+    tipoPublicacao = models.ForeignKey(TipoBI, on_delete=models.CASCADE)
+    biDeReferencia = models.ForeignKey("Boletim", on_delete=models.CASCADE) 
