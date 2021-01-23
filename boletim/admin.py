@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Boletim, TipoBoletim
+from .models import Boletim, TipoBoletim, ParteBoletim, SecaoParteBoletim
 
 # Register your models here.
 @admin.register(Boletim)
@@ -8,4 +8,12 @@ class BoletimAdmin(admin.ModelAdmin):
 
 @admin.register(TipoBoletim)
 class TipoBIAdmin(admin.ModelAdmin):
+    pass
+
+@admin.register(ParteBoletim)
+class ParteBoletim(admin.ModelAdmin):
+    pass
+
+@admin.register(SecaoParteBoletim)
+class SecaoParteBoletim(admin.ModelAdmin):
     pass

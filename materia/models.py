@@ -34,7 +34,7 @@ class Materia(models.Model):
     tipoBoletim = models.ForeignKey(TipoBoletim, on_delete=models.CASCADE)
     pagina = models.IntegerField()
     slug = models.SlugField()
-
+    
     '''
     private $descrAssEsp;
     private $descrAssGer;
