@@ -4,7 +4,7 @@ from .models import Boletim, TipoBoletim, ParteBoletim, SecaoParteBoletim
 # Register your models here.
 @admin.register(Boletim)
 class BoletimAdmin(admin.ModelAdmin):
-    date_hierarchy = 'dataPublicacao'
+    date_hierarchy = 'data_Publicacao'
 
 @admin.register(TipoBoletim)
 class TipoBIAdmin(admin.ModelAdmin):
