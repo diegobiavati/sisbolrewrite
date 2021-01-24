@@ -1,7 +1,10 @@
 from django.contrib import admin
-from .models import Pessoa
+from .models import Pessoa,OrganizacaoMilitar
 
-# Register your models here.
+@admin.register(OrganizacaoMilitar)
+class OrganizacaoMilitarAdmin(admin.ModelAdmin):
+    pass
+
 @admin.register(Pessoa)
 class RegisterAdmin(admin.ModelAdmin):
     pass

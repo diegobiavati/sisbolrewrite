@@ -7,6 +7,7 @@ from base.models import Pessoa
 class PessoaMateriaBoletim(models.Model):
     pessoa = models.ForeignKey(Pessoa,on_delete=models.CASCADE)
     texto_Individual = models.TextField()
+    slug = models.SlugField()
 
 class TipoDocumento(models.Model):
     descricao = models.CharField(max_length=255)
@@ -26,7 +27,6 @@ class AssuntoGeral(models.Model):
     tipo_Boletim = models.ForeignKey(TipoBoletim,on_delete=models.CASCADE)
     slug = models.SlugField()
 
-# Create your models here.
 class Materia(models.Model):
     data = models.DateField()
     tipo_Documento = models.ForeignKey(TipoDocumento,on_delete=models.CASCADE)
@@ -40,17 +40,15 @@ class Materia(models.Model):
     data_Documento = models.DateField()
     tipo_Boletim = models.ForeignKey(TipoBoletim,on_delete=models.CASCADE)
     pagina = models.IntegerField()
-    slug = models.SlugField()
     usuario = models.ForeignKey(User,on_delete=models.CASCADE)    
     texto_FechamentoVaiAlteracao = models.BooleanField(default=False)
     ordem_Materia = models.IntegerField()
-
-
+    #descricao_Assunto_Especifico = models.ForeignKey(AssuntoEspecifico, on_delete=models.CASCADE)
+    #descricao_Assunto_Geral = models.ForeignKey(AssuntoGeral,on_delete=models.CASCADE)
     '''
-    private $descrAssEsp;
-    private $descrAssGer;
     private $codom;
     private $codSubun;
     private $militarAss;
     private $mostraRef;
     '''
+    slug = models.SlugField()

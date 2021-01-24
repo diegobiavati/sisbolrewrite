@@ -17,13 +17,13 @@ class SecaoParteBoletim(models.Model):
 class TipoBoletim(models.Model):
     descricao = models.CharField(max_length=250)
     abreviatura = models.CharField(max_length=250)
-    slug = models.SlugField()
     numero_Ultima_Pagina = models.IntegerField()
     numero_Ultimo_Boletim = models.IntegerField()
     inicia_Numero_Pagina = models.IntegerField()
     e_Aditamento = models.BooleanField()
     imprime_Bordas = models.BooleanField()
     titulo = models.CharField(max_length=250)
+    slug = models.SlugField()
 
 class Boletim(models.Model):
     ''' Classe Boletim '''
