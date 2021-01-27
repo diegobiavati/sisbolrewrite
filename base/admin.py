@@ -1,10 +1,13 @@
+'''
+Módulo que contém os dados bases para o sistema
+'''
 from django.contrib import admin
 from .models import Pessoa,OrganizacaoMilitar
 
 @admin.register(OrganizacaoMilitar)
 class OrganizacaoMilitarAdmin(admin.ModelAdmin):
-    pass
+    ''' Classe Administravia para os dados das Organizações Militares '''
 
 @admin.register(Pessoa)
 class RegisterAdmin(admin.ModelAdmin):
-    pass
+    ''' Classe Adminsitravida para os dados das Pessoas que terão matérias publicadas '''

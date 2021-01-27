@@ -1,8 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
-from boletim.models import ParteBoletim,SecaoParteBoletim,TipoBoletim
+from boletim.models import ParteBoletim,SecaoParteBoletim,TipoBoletim,Boletim
 from base.models import Pessoa
-
 
 class PessoaMateriaBoletim(models.Model):
     pessoa = models.ForeignKey(Pessoa,on_delete=models.CASCADE)
@@ -12,6 +11,8 @@ class PessoaMateriaBoletim(models.Model):
 class TipoDocumento(models.Model):
     descricao = models.CharField(max_length=255)
     slug = models.SlugField()
+    def __str__(self):
+        return self.descricao
 
 class AssuntoEspecifico(models.Model):
     descricao = models.CharField(max_length=255)
@@ -52,3 +53,13 @@ class Materia(models.Model):
     private $mostraRef;
     '''
     slug = models.SlugField()
+
+class IndiceBoletim(models.Model):
+    ''' Classe que contém os dados do índice do boletim '''
+    boletim = models.ForeignKey(Boletim, on_delete=models.CASCADE)
+    materia_Boletim =  models.ForeignKey(Materia, on_delete=models.CASCADE)
+    slug = models.SlugField()
+    '''
+    private $boletim;
+    private $materiaBi;
+    '''
